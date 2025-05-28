@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ImmunoPath UTI</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #search {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>ImmunoPath UTI – Immune Response & Pathogen Marker Database</h1>
+</header>
+<div class="container">
+    <h2>About Urinary Tract Infections (UTIs)</h2>
+    <p>UTIs are common infections that can become serious due to antibiotic resistance. This platform provides detailed insights into UTI-causing pathogens, their molecular markers, immune responses, and related research.</p>
+    <h2>Pathogens</h2>
+    <input type="text" id="search" placeholder="Search for a pathogen..." onkeyup="filterPathogens()">
+    <div id="pathogen-list">
+<a class="pathogen-link" href="pathogens/Uropathogenic_Escherichia_coli.html">Uropathogenic Escherichia coli</a>
+<a class="pathogen-link" href="pathogens/Klebsiella_pneumoniae.html">Klebsiella pneumoniae,</a>
+<a class="pathogen-link" href="pathogens/Proteus_mirabilis.html">Proteus mirabilis</a>
+<a class="pathogen-link" href="pathogens/Enterococcus_faecalis.html">Enterococcus faecalis</a>
+<a class="pathogen-link" href="pathogens/Staphylococcus_saprophyticus.html">Staphylococcus saprophyticus</a>
+<a class="pathogen-link" href="pathogens/Staphylococcus_aureus.html">Staphylococcus aureus</a>
+<a class="pathogen-link" href="pathogens/Pseudomonas_aeruginosa.html">Pseudomonas aeruginosa</a>
+<a class="pathogen-link" href="pathogens/Acinetobacter_baumanii.html">Acinetobacter baumanii</a>
+<a class="pathogen-link" href="pathogens/Enterobacter_aerogenes.html">Enterobacter aerogenes</a>
+<a class="pathogen-link" href="pathogens/Candida_parapsilosis.html">Candida parapsilosis</a>
+<a class="pathogen-link" href="pathogens/Candida_glabrata.html">Candida glabrata</a>
+<a class="pathogen-link" href="pathogens/Candida_tropicalis.html">Candida tropicalis</a>
+<a class="pathogen-link" href="pathogens/Candida_lusitanae.html">Candida lusitanae</a>
+<a class="pathogen-link" href="pathogens/Candida_guilhermondi.html">Candida guilhermondi</a>
+<a class="pathogen-link" href="pathogens/Candida_dubliniensis.html">Candida dubliniensis</a>
+<a class="pathogen-link" href="pathogens/Candida_dubliniensis.html">Candida dubliniensis</a>
+<a class="pathogen-link" href="pathogens/Adeno_virus.html">Adeno virus</a>
+<a class="pathogen-link" href="pathogens/BK_virus.html">BK virus</a>
+<a class="pathogen-link" href="pathogens/Polyomavirus.html">Polyomavirus</a>
+<a class="pathogen-link" href="pathogens/Citomegalovirus.html">Citomegalovirus</a>
+<a class="pathogen-link" href="pathogens/Human_papilloma_virus.html">Human papilloma virus</a>
+
+    </div>
+</div>
+<script>
+function filterPathogens() {
+    const input = document.getElementById('search');
+    const filter = input.value.toLowerCase();
+    const links = document.querySelectorAll('#pathogen-list .pathogen-link');
+    links.forEach(link => {
+        const text = link.textContent.toLowerCase();
+        link.style.display = text.includes(filter) ? "" : "none";
+    });
+}
+</script>
+</body>
+</html>
